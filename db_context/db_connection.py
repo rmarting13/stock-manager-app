@@ -42,7 +42,7 @@ class Connection:
     def putConnection(cls, conn):
         try:
             cls.getPool().putconn(conn)
-            log.debug(f'Connection putted: {conn}')
+            log.debug(f'Connection returned: {conn}')
         except Exception as e:
             log.error(f'An exception occurred while returning connection to pool: {e}')
 
