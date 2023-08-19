@@ -1,5 +1,5 @@
 class Product:
-    def __int__(self, code, description, price, brand):
+    def __init__(self, code=None, description=None, price=None, brand=None):
         self.__code = code
         self.__description = description
         self.__brand = brand
@@ -10,16 +10,16 @@ class Product:
         return self.__code
 
     @code.setter
-    def id(self, value):
+    def code(self, value):
         self.__code = value
 
     @property
-    def name(self):
-        return self.name
+    def description(self):
+        return self.__description
 
-    @name.setter
-    def name(self, value):
-        self.__name = value
+    @description.setter
+    def description(self, value):
+        self.__description = value
 
     @property
     def brand(self):
@@ -38,7 +38,7 @@ class Product:
         self.__price = value
 
     def __str__(self):
-        return (f'Product {self.id()}\n'
-                f'Name: {self.name}\n'
+        return (f'Product:\n'
+                f'Name: {self.description}\n'
                 f'Brand: {self.brand}\n'
                 f'Price: {self.price}\n')
